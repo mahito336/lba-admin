@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>決済成功</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body { font-family: system-ui; padding: 24px; text-align:center; }
+    h1 { color:#2c7be5; }
+    a { display:block; margin-top:20px; color:#2c7be5; }
+  </style>
+</head>
+<body>
+  <h1>決済が完了しました！</h1>
+  <p>まもなく LBA 環境が有効になります。</p>
+
+  <div id="next"></div>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const tenantId = params.get("tenantId");
+
+    document.getElementById("next").innerHTML =
+      `<a href="https://mahito336.github.io/lba-admin/?tenantId=${tenantId}">
+        ▶ 講師ポータルに戻る
+      </a>`;
+  </script>
+</body>
+</html>
